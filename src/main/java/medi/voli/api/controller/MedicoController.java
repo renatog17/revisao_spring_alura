@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
 import medi.voli.api.medico.DadosCadastroMedico;
 import medi.voli.api.medico.Medico;
 import medi.voli.api.medico.MedicoRepository;
@@ -21,7 +22,7 @@ public class MedicoController {
 	
 	@PostMapping
 	@Transactional //isso quer dizer que eu preciso ter uma conexão ativa com o db
-	public void cadastrar(@RequestBody DadosCadastroMedico dados) {
+	public void cadastrar(@RequestBody @Valid DadosCadastroMedico dados) {
 		
 		repository.save(new Medico(dados));
 	}
