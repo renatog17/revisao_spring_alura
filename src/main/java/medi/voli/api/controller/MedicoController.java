@@ -36,7 +36,7 @@ public class MedicoController {
 	@GetMapping
 	public Page<DadosListagemMedico> listar(@PageableDefault(size=10, sort = {"nome"}) Pageable paginacao){
 		//o spring tem um pageable padrão, a anotação pageable default vai apenas mudar esse padrão.
-		return repository.findAll(paginacao).map(DadosListagemMedico::new);
+		return repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new);
 	}
 	
 	@PutMapping
