@@ -1,10 +1,12 @@
 package medi.voli.api.medico;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import medi.voli.api.controller.DadosAtualizacaoMedico;
 import medi.voli.api.endereco.Endereco;
 
 @Table(name = "medicos")
@@ -15,7 +17,8 @@ import medi.voli.api.endereco.Endereco;
 @EqualsAndHashCode(of = "id")
 public class Medico {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String email;
@@ -25,6 +28,7 @@ public class Medico {
 	private Especialidade especialidade;
 	@Embedded
 	private Endereco endereco;
+
 	public Medico(DadosCadastroMedico dados) {
 		this.nome = dados.nome();
 		this.email = dados.email();
@@ -32,5 +36,15 @@ public class Medico {
 		this.especialidade = dados.especialidade();
 		this.endereco = new Endereco(dados.endereco());
 		this.telefone = dados.telefone();
+	}
+
+	public void atualizarInformacoes(@Valid DadosAtualizacaoMedico dados) {
+		if (dados.nome() != null)
+			this.nome = dados.nome();
+		if (dados.telefone() != null)
+			this.telefone = dados.telefone();
+		if (dados.dadosEndereco() != null) {
+			this.endereco.atualizarInformacoes(dados.dadosEndereco());
+		}
 	}
 }
