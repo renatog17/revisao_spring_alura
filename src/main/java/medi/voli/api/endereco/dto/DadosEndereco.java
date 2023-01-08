@@ -1,4 +1,4 @@
-package medi.voli.api.endereco;
+package medi.voli.api.endereco.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

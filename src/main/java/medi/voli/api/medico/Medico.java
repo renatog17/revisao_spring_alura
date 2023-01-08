@@ -6,8 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import medi.voli.api.controller.DadosAtualizacaoMedico;
 import medi.voli.api.endereco.Endereco;
+import medi.voli.api.medico.dto.DadosAtualizacaoMedico;
+import medi.voli.api.medico.dto.DadosCadastroMedico;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")

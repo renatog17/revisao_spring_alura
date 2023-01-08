@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
-import medi.voli.api.medico.DadosCadastroMedico;
 import medi.voli.api.medico.Medico;
 import medi.voli.api.medico.MedicoRepository;
+import medi.voli.api.medico.dto.DadosAtualizacaoMedico;
+import medi.voli.api.medico.dto.DadosCadastroMedico;
+import medi.voli.api.medico.dto.DadosListagemMedico;
 
 
 @RestController

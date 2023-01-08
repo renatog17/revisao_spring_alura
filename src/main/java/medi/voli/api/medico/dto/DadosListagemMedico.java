@@ -1,4 +1,4 @@
-package medi.voli.api.controller;
+package medi.voli.api.medico.dto;
 
 import medi.voli.api.medico.Especialidade;
 import medi.voli.api.medico.Medico;
