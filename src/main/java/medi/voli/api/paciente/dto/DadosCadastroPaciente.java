@@ -13,8 +13,8 @@ public record DadosCadastroPaciente(
 		@NotBlank
 		@Email
 		String email, 
-//		@NotBlank
-//		String telefone, 
+		@NotBlank
+		String telefone, 
 		@NotBlank
 		@Size(max = 11, min = 11)
 		String cpf,
