@@ -6,11 +6,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import medi.voli.api.endereco.Endereco;
+import medi.voli.api.paciente.dto.DadosAtualizaoPaciente;
 import medi.voli.api.paciente.dto.DadosCadastroPaciente;
 
 @Entity(name = "Paciente")
@@ -38,5 +40,15 @@ public class Paciente {
 		this.cpf = dados.cpf();
 		this.endereco = new Endereco(dados.endereco());
 		
+	}
+
+	public void atualizarInformacoes(@Valid DadosAtualizaoPaciente dados) {
+		if (dados.nome() != null)
+			this.nome = dados.nome();
+		if (dados.telefone() != null)
+			this.telefone = dados.telefone();
+		if (dados.dadosEndereco() != null) {
+			this.endereco.atualizarInformacoes(dados.dadosEndereco());
+		}
 	}
 }
