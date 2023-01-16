@@ -1,4 +1,4 @@
-package medi.voli.api.paciente;
+package medi.voli.api.domain;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -11,9 +11,8 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import medi.voli.api.endereco.Endereco;
-import medi.voli.api.paciente.dto.DadosAtualizaoPaciente;
-import medi.voli.api.paciente.dto.DadosCadastroPaciente;
+import medi.voli.api.controller.dto.paciente.DadosAtualizaoPaciente;
+import medi.voli.api.controller.dto.paciente.DadosCadastroPaciente;
 
 @Entity(name = "Paciente")
 @Table(name = "pacientes")

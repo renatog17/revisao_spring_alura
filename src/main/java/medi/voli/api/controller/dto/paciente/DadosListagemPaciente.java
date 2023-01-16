@@ -1,6 +1,6 @@
-package medi.voli.api.paciente.dto;
+package medi.voli.api.controller.dto.paciente;
 
-import medi.voli.api.paciente.Paciente;
+import medi.voli.api.domain.Paciente;
 
 public record DadosListagemPaciente(
 		Long id,

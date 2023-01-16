@@ -1,7 +1,7 @@
-package medi.voli.api.endereco;
+package medi.voli.api.domain;
 
 import jakarta.persistence.Embeddable;
-import medi.voli.api.endereco.dto.DadosEndereco;
+import medi.voli.api.controller.dto.endereco.DadosEndereco;
 
 @Embeddable
 public class Endereco {

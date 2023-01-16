@@ -1,4 +1,4 @@
-package medi.voli.api.medico;
+package medi.voli.api.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
@@ -6,9 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import medi.voli.api.endereco.Endereco;
-import medi.voli.api.medico.dto.DadosAtualizacaoMedico;
-import medi.voli.api.medico.dto.DadosCadastroMedico;
+import medi.voli.api.controller.dto.medico.DadosAtualizacaoMedico;
+import medi.voli.api.controller.dto.medico.DadosCadastroMedico;
+import medi.voli.api.domain.enumeracoes.Especialidade;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")

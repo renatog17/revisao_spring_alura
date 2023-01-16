@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
-import medi.voli.api.medico.dto.DadosListagemMedico;
-import medi.voli.api.paciente.Paciente;
-import medi.voli.api.paciente.PacienteRepository;
-import medi.voli.api.paciente.dto.DadosAtualizaoPaciente;
-import medi.voli.api.paciente.dto.DadosCadastroPaciente;
-import medi.voli.api.paciente.dto.DadosListagemPaciente;
+import medi.voli.api.controller.dto.medico.DadosListagemMedico;
+import medi.voli.api.controller.dto.paciente.DadosAtualizaoPaciente;
+import medi.voli.api.controller.dto.paciente.DadosCadastroPaciente;
+import medi.voli.api.controller.dto.paciente.DadosListagemPaciente;
+import medi.voli.api.domain.Paciente;
+import medi.voli.api.repository.PacienteRepository;
 
 @RestController
 @RequestMapping("/pacientes")

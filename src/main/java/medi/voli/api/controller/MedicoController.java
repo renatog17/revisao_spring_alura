@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import jakarta.validation.Valid;
-import medi.voli.api.medico.Medico;
-import medi.voli.api.medico.MedicoRepository;
-import medi.voli.api.medico.dto.DadosAtualizacaoMedico;
-import medi.voli.api.medico.dto.DadosCadastroMedico;
-import medi.voli.api.medico.dto.DadosDetalhamentoMedico;
-import medi.voli.api.medico.dto.DadosListagemMedico;
+import medi.voli.api.controller.dto.medico.DadosAtualizacaoMedico;
+import medi.voli.api.controller.dto.medico.DadosCadastroMedico;
+import medi.voli.api.controller.dto.medico.DadosDetalhamentoMedico;
+import medi.voli.api.controller.dto.medico.DadosListagemMedico;
+import medi.voli.api.domain.Medico;
+import medi.voli.api.repository.MedicoRepository;
 
 
 @RestController
@@ -70,7 +70,6 @@ public class MedicoController {
 	@GetMapping("/{id}")
 	public ResponseEntity detalhar(@PathVariable Long id) {
 		var medico = repository.getReferenceById(id);
-		
 		return ResponseEntity.ok(new DadosDetalhamentoMedico(medico));
 	}
 }

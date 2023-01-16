@@ -1,12 +1,12 @@
-package medi.voli.api.medico.dto;
+package medi.voli.api.controller.dto.medico;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import medi.voli.api.endereco.dto.DadosEndereco;
-import medi.voli.api.medico.Especialidade;
+import medi.voli.api.controller.dto.endereco.DadosEndereco;
+import medi.voli.api.domain.enumeracoes.Especialidade;
 
 public record DadosCadastroMedico( 
 		@NotBlank

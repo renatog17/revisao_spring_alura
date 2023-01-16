@@ -1,7 +1,7 @@
-package medi.voli.api.paciente.dto;
+package medi.voli.api.controller.dto.paciente;
 
 import jakarta.validation.constraints.NotNull;
-import medi.voli.api.endereco.dto.DadosEndereco;
+import medi.voli.api.controller.dto.endereco.DadosEndereco;
 
 public record DadosAtualizaoPaciente(
 		@NotNull
