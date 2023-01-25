@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 import medi.voli.api.controller.dto.autenticacao.DadosAutenticacao;
+import medi.voli.api.domain.usuario.Usuario;
+import medi.voli.api.security.TokenService;
 
 @RestController
 @RequestMapping("/login")
@@ -19,10 +21,13 @@ public class AutenticacaoController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	
+	@Autowired
+	private TokenService tokenService;
+	
 	@PostMapping
 	public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
 		var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
 		var authentication = authenticationManager.authenticate(token);
-		return ResponseEntity.ok().build();
+		return ResponseEntity.ok(tokenService.gerarToken((Usuario)authentication.getPrincipal()));
 	}
 }
